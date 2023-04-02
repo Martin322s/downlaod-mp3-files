@@ -6,4 +6,8 @@ const port = process.env.PORT || 3000;
 initViewEngine(app);
 app.use('/static', express.static('public'));
 
+app.get("/", (req, res) => {
+    res.render("home");
+});
+
 app.listen(port, () => console.log(`Server is working at: http://localhost:${port}`));
